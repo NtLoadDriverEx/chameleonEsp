@@ -1099,7 +1099,7 @@ DUMPER7_ASSERTS_FMovieSceneEntitySystemGraph;
 struct FMovieSceneEvaluationHookEvent final
 {
 public:
-	struct FMovieSceneEvaluationHookComponent     hook;                                              // 0x0000(0x0020)(NoDestructor, NativeAccessSpecifierPublic)
+	struct FMovieSceneEvaluationHookComponent     Hook;                                              // 0x0000(0x0020)(NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_20[0x20];                                      // 0x0020(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMovieSceneEvaluationHookEvent;

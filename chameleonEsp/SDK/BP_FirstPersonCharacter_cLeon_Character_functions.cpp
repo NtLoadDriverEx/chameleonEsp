@@ -36,6 +36,60 @@ void ABP_FirstPersonCharacter_cLeon_Character_C::ExecuteUbergraph_BP_FirstPerson
 }
 
 
+// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.SetStencilValue(Force)
+// (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   StencilValue                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_FirstPersonCharacter_cLeon_Character_C::SetStencilValue_Force_(int32 StencilValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "SetStencilValue(Force)");
+
+	Params::BP_FirstPersonCharacter_cLeon_Character_C_SetStencilValue_Force_ Parms{};
+
+	Parms.StencilValue = StencilValue;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.ResetRagdoll
+// (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
+
+void ABP_FirstPersonCharacter_cLeon_Character_C::ResetRagdoll()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "ResetRagdoll");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.GameEndResetState
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    IsLive                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_FirstPersonCharacter_cLeon_Character_C::GameEndResetState(bool IsLive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "GameEndResetState");
+
+	Params::BP_FirstPersonCharacter_cLeon_Character_C_GameEndResetState Parms{};
+
+	Parms.IsLive = IsLive;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.GameEndMoveStop
 // (BlueprintCallable, BlueprintEvent)
 
@@ -278,19 +332,19 @@ void ABP_FirstPersonCharacter_cLeon_Character_C::BindName(const class FString& N
 }
 
 
-// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.SetStencilValue
+// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.SetStencilValue(Game)
 // (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   StencilValue                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_FirstPersonCharacter_cLeon_Character_C::SetStencilValue(int32 StencilValue)
+void ABP_FirstPersonCharacter_cLeon_Character_C::SetStencilValue_Game_(int32 StencilValue)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "SetStencilValue");
+		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "SetStencilValue(Game)");
 
-	Params::BP_FirstPersonCharacter_cLeon_Character_C_SetStencilValue Parms{};
+	Params::BP_FirstPersonCharacter_cLeon_Character_C_SetStencilValue_Game_ Parms{};
 
 	Parms.StencilValue = StencilValue;
 
@@ -570,6 +624,50 @@ void ABP_FirstPersonCharacter_cLeon_Character_C::DeltaUpdate()
 }
 
 
+// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.CustomCrouch(Server)
+// (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// double                                  Height                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Is_Crouching_Input                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_FirstPersonCharacter_cLeon_Character_C::CustomCrouch_Server_(double Height, bool Is_Crouching_Input)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "CustomCrouch(Server)");
+
+	Params::BP_FirstPersonCharacter_cLeon_Character_C_CustomCrouch_Server_ Parms{};
+
+	Parms.Height = Height;
+	Parms.Is_Crouching_Input = Is_Crouching_Input;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.BndEvt__BP_FirstPersonCharacter_cLeon_Character_ExtendedPhysicsCharacterMoverComponent_K2Node_ComponentBoundEvent_0_Mover_OnStanceChanged__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// EStanceMode                             OldStance                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EStanceMode                             NewStance                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_FirstPersonCharacter_cLeon_Character_C::BndEvt__BP_FirstPersonCharacter_cLeon_Character_ExtendedPhysicsCharacterMoverComponent_K2Node_ComponentBoundEvent_0_Mover_OnStanceChanged__DelegateSignature(EStanceMode OldStance, EStanceMode NewStance)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "BndEvt__BP_FirstPersonCharacter_cLeon_Character_ExtendedPhysicsCharacterMoverComponent_K2Node_ComponentBoundEvent_0_Mover_OnStanceChanged__DelegateSignature");
+
+	Params::BP_FirstPersonCharacter_cLeon_Character_C_BndEvt__BP_FirstPersonCharacter_cLeon_Character_ExtendedPhysicsCharacterMoverComponent_K2Node_ComponentBoundEvent_0_Mover_OnStanceChanged__DelegateSignature Parms{};
+
+	Parms.OldStance = OldStance;
+	Parms.NewStance = NewStance;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.SetIsClimbing
 // (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -604,50 +702,6 @@ void ABP_FirstPersonCharacter_cLeon_Character_C::CustomCrouch_Client_(double Hei
 		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "CustomCrouch(Client)");
 
 	Params::BP_FirstPersonCharacter_cLeon_Character_C_CustomCrouch_Client_ Parms{};
-
-	Parms.Height = Height;
-	Parms.Is_Crouching_Input = Is_Crouching_Input;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.BndEvt__BP_FirstPersonCharacter_cLeon_Character_ExtendedPhysicsCharacterMoverComponent_K2Node_ComponentBoundEvent_0_Mover_OnStanceChanged__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// EStanceMode                             OldStance                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EStanceMode                             NewStance                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_FirstPersonCharacter_cLeon_Character_C::BndEvt__BP_FirstPersonCharacter_cLeon_Character_ExtendedPhysicsCharacterMoverComponent_K2Node_ComponentBoundEvent_0_Mover_OnStanceChanged__DelegateSignature(EStanceMode OldStance, EStanceMode NewStance)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "BndEvt__BP_FirstPersonCharacter_cLeon_Character_ExtendedPhysicsCharacterMoverComponent_K2Node_ComponentBoundEvent_0_Mover_OnStanceChanged__DelegateSignature");
-
-	Params::BP_FirstPersonCharacter_cLeon_Character_C_BndEvt__BP_FirstPersonCharacter_cLeon_Character_ExtendedPhysicsCharacterMoverComponent_K2Node_ComponentBoundEvent_0_Mover_OnStanceChanged__DelegateSignature Parms{};
-
-	Parms.OldStance = OldStance;
-	Parms.NewStance = NewStance;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.CustomCrouch(Server)
-// (Net, NetReliable, NetServer, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// double                                  Height                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Is_Crouching_Input                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_FirstPersonCharacter_cLeon_Character_C::CustomCrouch_Server_(double Height, bool Is_Crouching_Input)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "CustomCrouch(Server)");
-
-	Params::BP_FirstPersonCharacter_cLeon_Character_C_CustomCrouch_Server_ Parms{};
 
 	Parms.Height = Height;
 	Parms.Is_Crouching_Input = Is_Crouching_Input;
@@ -1052,7 +1106,7 @@ void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_Zero_K2Node_InputDebu
 }
 
 
-// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.InpActEvt_IA_PaintStart_K2Node_EnhancedInputActionEvent_12
+// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_12
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -1060,14 +1114,14 @@ void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_Zero_K2Node_InputDebu
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_PaintStart_K2Node_EnhancedInputActionEvent_12(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_12(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "InpActEvt_IA_PaintStart_K2Node_EnhancedInputActionEvent_12");
+		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_12");
 
-	Params::BP_FirstPersonCharacter_cLeon_Character_C_InpActEvt_IA_PaintStart_K2Node_EnhancedInputActionEvent_12 Parms{};
+	Params::BP_FirstPersonCharacter_cLeon_Character_C_InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_12 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -1130,7 +1184,7 @@ void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_Jump_K2Node_Enhanc
 }
 
 
-// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_15
+// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.InpActEvt_IA_PaintStart_K2Node_EnhancedInputActionEvent_15
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -1138,14 +1192,14 @@ void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_Jump_K2Node_Enhanc
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_15(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_PaintStart_K2Node_EnhancedInputActionEvent_15(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_15");
+		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "InpActEvt_IA_PaintStart_K2Node_EnhancedInputActionEvent_15");
 
-	Params::BP_FirstPersonCharacter_cLeon_Character_C_InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent_15 Parms{};
+	Params::BP_FirstPersonCharacter_cLeon_Character_C_InpActEvt_IA_PaintStart_K2Node_EnhancedInputActionEvent_15 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -1156,7 +1210,7 @@ void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_Jump_K2Node_Enhanc
 }
 
 
-// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.InpActEvt_IA_ZoomWheel_K2Node_EnhancedInputActionEvent_16
+// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_16
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -1164,14 +1218,14 @@ void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_Jump_K2Node_Enhanc
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_ZoomWheel_K2Node_EnhancedInputActionEvent_16(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_16(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "InpActEvt_IA_ZoomWheel_K2Node_EnhancedInputActionEvent_16");
+		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_16");
 
-	Params::BP_FirstPersonCharacter_cLeon_Character_C_InpActEvt_IA_ZoomWheel_K2Node_EnhancedInputActionEvent_16 Parms{};
+	Params::BP_FirstPersonCharacter_cLeon_Character_C_InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_16 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -1182,7 +1236,7 @@ void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_ZoomWheel_K2Node_E
 }
 
 
-// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_17
+// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_17
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -1190,14 +1244,14 @@ void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_ZoomWheel_K2Node_E
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_17(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_17(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_17");
+		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_17");
 
-	Params::BP_FirstPersonCharacter_cLeon_Character_C_InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_17 Parms{};
+	Params::BP_FirstPersonCharacter_cLeon_Character_C_InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_17 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -1208,7 +1262,7 @@ void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_Zoom_K2Node_Enhanc
 }
 
 
-// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_18
+// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_18
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -1216,14 +1270,14 @@ void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_Zoom_K2Node_Enhanc
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_18(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_18(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_18");
+		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_18");
 
-	Params::BP_FirstPersonCharacter_cLeon_Character_C_InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_18 Parms{};
+	Params::BP_FirstPersonCharacter_cLeon_Character_C_InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_18 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -1234,7 +1288,7 @@ void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_Zoom_K2Node_Enhanc
 }
 
 
-// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_19
+// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.InpActEvt_IA_ZoomWheel_K2Node_EnhancedInputActionEvent_19
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -1242,14 +1296,14 @@ void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_Zoom_K2Node_Enhanc
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_19(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_ZoomWheel_K2Node_EnhancedInputActionEvent_19(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_19");
+		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "InpActEvt_IA_ZoomWheel_K2Node_EnhancedInputActionEvent_19");
 
-	Params::BP_FirstPersonCharacter_cLeon_Character_C_InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_19 Parms{};
+	Params::BP_FirstPersonCharacter_cLeon_Character_C_InpActEvt_IA_ZoomWheel_K2Node_EnhancedInputActionEvent_19 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -1260,7 +1314,7 @@ void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_Zoom_K2Node_Enhanc
 }
 
 
-// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_20
+// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_20
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -1268,14 +1322,14 @@ void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_Zoom_K2Node_Enhanc
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_20(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_20(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_20");
+		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_20");
 
-	Params::BP_FirstPersonCharacter_cLeon_Character_C_InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_20 Parms{};
+	Params::BP_FirstPersonCharacter_cLeon_Character_C_InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_20 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -1286,7 +1340,7 @@ void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_KeepRotation_K2Nod
 }
 
 
-// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_21
+// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_21
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -1294,14 +1348,14 @@ void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_KeepRotation_K2Nod
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_21(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_21(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_21");
+		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_21");
 
-	Params::BP_FirstPersonCharacter_cLeon_Character_C_InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_21 Parms{};
+	Params::BP_FirstPersonCharacter_cLeon_Character_C_InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_21 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -1312,7 +1366,7 @@ void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_KeepRotation_K2Nod
 }
 
 
-// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_22
+// Function BP_FirstPersonCharacter_cLeon_Character.BP_FirstPersonCharacter_cLeon_Character_C.InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_22
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -1320,14 +1374,14 @@ void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_KeepRotation_K2Nod
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_22(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void ABP_FirstPersonCharacter_cLeon_Character_C::InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_22(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_22");
+		Func = Class->GetFunction("BP_FirstPersonCharacter_cLeon_Character_C", "InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_22");
 
-	Params::BP_FirstPersonCharacter_cLeon_Character_C_InpActEvt_IA_KeepRotation_K2Node_EnhancedInputActionEvent_22 Parms{};
+	Params::BP_FirstPersonCharacter_cLeon_Character_C_InpActEvt_IA_Zoom_K2Node_EnhancedInputActionEvent_22 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -1487,7 +1541,7 @@ bool ABP_FirstPersonCharacter_cLeon_Character_C::CanDash()
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	return Parms.ReturnValue;
+	return Parms.ReturnValue_CanDash;
 }
 
 

@@ -1674,7 +1674,7 @@ public:
 	bool IsSubsystemAvailable();
 	void RemoveNamedSession(class FName SessionName);
 	void RemovePlayerFromSession(int32 LocalUserNum, class FName SessionName, const struct FUniqueNetIdRepl& TargetPlayerId);
-	bool SendSessionInviteToFriend(const struct FUniqueNetIdRepl& LocalUserId, class FName SessionName, const struct FUniqueNetIdRepl& friend_0);
+	bool SendSessionInviteToFriend(const struct FUniqueNetIdRepl& LocalUserId, class FName SessionName, const struct FUniqueNetIdRepl& Friend);
 	bool SendSessionInviteToFriends(const struct FUniqueNetIdRepl& LocalUserId, class FName SessionName, const TArray<struct FUniqueNetIdRepl>& Friends);
 
 public:
@@ -5806,7 +5806,7 @@ public:
 	struct FUniqueNetIdRepl                       __Store__Friend;                                   // 0x0078(0x0030)(HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
-	static class UOnlineSessionSubsystemFindFriendSession* FindFriendSession(class UOnlineSessionSubsystem* Subsystem, int32 LocalUserNum, const struct FUniqueNetIdRepl& friend_0);
+	static class UOnlineSessionSubsystemFindFriendSession* FindFriendSession(class UOnlineSessionSubsystem* Subsystem, int32 LocalUserNum, const struct FUniqueNetIdRepl& Friend);
 
 public:
 	static class UClass* StaticClass()

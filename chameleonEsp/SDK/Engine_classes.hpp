@@ -12045,9 +12045,9 @@ public:
 };
 DUMPER7_ASSERTS_UMaterialExpressionDistance;
 
-// Class Engine.spotlight
+// Class Engine.SpotLight
 // 0x0008 (0x02C0 - 0x02B8)
-class Aspotlight : public ALight
+class ASpotLight : public ALight
 {
 public:
 	class USpotLightComponent*                    SpotLightComponent;                                // 0x02B8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
@@ -12059,22 +12059,22 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("spotlight")
+		STATIC_CLASS_IMPL("SpotLight")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"spotlight")
+		STATIC_NAME_IMPL(L"SpotLight")
 	}
-	static class Aspotlight* GetDefaultObj()
+	static class ASpotLight* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<Aspotlight>();
+		return GetDefaultObjImpl<ASpotLight>();
 	}
 };
-DUMPER7_ASSERTS_Aspotlight;
+DUMPER7_ASSERTS_ASpotLight;
 
 // Class Engine.GeneratedMeshAreaLight
 // 0x0000 (0x02C0 - 0x02C0)
-class AGeneratedMeshAreaLight final : public Aspotlight
+class AGeneratedMeshAreaLight final : public ASpotLight
 {
 public:
 	static class UClass* StaticClass()
@@ -12575,10 +12575,10 @@ public:
 	bool RemoveCurveKey(const struct FAnimationCurveIdentifier& CurveId, float Time, bool bShouldTransact);
 	bool RemoveTransformCurveKey(const struct FAnimationCurveIdentifier& CurveId, float Time, bool bShouldTransact);
 	bool RenameCurve(const struct FAnimationCurveIdentifier& CurveToRenameId, const struct FAnimationCurveIdentifier& NewCurveId, bool bShouldTransact);
-	void Resize(float Length, float T0, float t1, bool bShouldTransact);
-	void ResizeInFrames(const struct FFrameNumber& NewLengthInFrames, const struct FFrameNumber& T0, const struct FFrameNumber& t1, bool bShouldTransact);
-	void ResizeNumberOfFrames(const struct FFrameNumber& NewLengthInFrames, const struct FFrameNumber& T0, const struct FFrameNumber& t1, bool bShouldTransact);
-	void ResizePlayLength(float NewLength, float T0, float t1, bool bShouldTransact);
+	void Resize(float Length, float T0, float T1, bool bShouldTransact);
+	void ResizeInFrames(const struct FFrameNumber& NewLengthInFrames, const struct FFrameNumber& T0, const struct FFrameNumber& T1, bool bShouldTransact);
+	void ResizeNumberOfFrames(const struct FFrameNumber& NewLengthInFrames, const struct FFrameNumber& T0, const struct FFrameNumber& T1, bool bShouldTransact);
+	void ResizePlayLength(float NewLength, float T0, float T1, bool bShouldTransact);
 	bool ScaleCurve(const struct FAnimationCurveIdentifier& CurveId, float Origin, float Factor, bool bShouldTransact);
 	bool SetBoneTrackKeys(class FName BoneName, const TArray<struct FVector>& PositionalKeys, const TArray<struct FQuat>& RotationalKeys, const TArray<struct FVector>& ScalingKeys, bool bShouldTransact);
 	bool SetCurveColor(const struct FAnimationCurveIdentifier& CurveId, const struct FLinearColor& Color, bool bShouldTransact);
@@ -33757,7 +33757,7 @@ DUMPER7_ASSERTS_UNetworkMetricsCSV_Replication;
 class UEdGraphNode_Documentation final : public UEdGraphNode
 {
 public:
-	class FString                                 LINK;                                              // 0x0098(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Link;                                              // 0x0098(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Excerpt;                                           // 0x00A8(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:

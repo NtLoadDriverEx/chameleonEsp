@@ -4214,10 +4214,10 @@ void UOnlineSessionSubsystem::RemovePlayerFromSession(int32 LocalUserNum, class 
 // Parameters:
 // const struct FUniqueNetIdRepl&          LocalUserId                                            (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             SessionName                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FUniqueNetIdRepl&          friend_0                                               (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FUniqueNetIdRepl&          Friend                                                 (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UOnlineSessionSubsystem::SendSessionInviteToFriend(const struct FUniqueNetIdRepl& LocalUserId, class FName SessionName, const struct FUniqueNetIdRepl& friend_0)
+bool UOnlineSessionSubsystem::SendSessionInviteToFriend(const struct FUniqueNetIdRepl& LocalUserId, class FName SessionName, const struct FUniqueNetIdRepl& Friend)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4228,7 +4228,7 @@ bool UOnlineSessionSubsystem::SendSessionInviteToFriend(const struct FUniqueNetI
 
 	Parms.LocalUserId = std::move(LocalUserId);
 	Parms.SessionName = SessionName;
-	Parms.friend_0 = std::move(friend_0);
+	Parms.Friend = std::move(Friend);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -14709,10 +14709,10 @@ class UOnlineSessionSubsystemJoinSession* UOnlineSessionSubsystemJoinSession::Jo
 // Parameters:
 // class UOnlineSessionSubsystem*          Subsystem                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   LocalUserNum                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FUniqueNetIdRepl&          friend_0                                               (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FUniqueNetIdRepl&          Friend                                                 (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UOnlineSessionSubsystemFindFriendSession*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UOnlineSessionSubsystemFindFriendSession* UOnlineSessionSubsystemFindFriendSession::FindFriendSession(class UOnlineSessionSubsystem* Subsystem, int32 LocalUserNum, const struct FUniqueNetIdRepl& friend_0)
+class UOnlineSessionSubsystemFindFriendSession* UOnlineSessionSubsystemFindFriendSession::FindFriendSession(class UOnlineSessionSubsystem* Subsystem, int32 LocalUserNum, const struct FUniqueNetIdRepl& Friend)
 {
 	static class UFunction* Func = nullptr;
 
@@ -14723,7 +14723,7 @@ class UOnlineSessionSubsystemFindFriendSession* UOnlineSessionSubsystemFindFrien
 
 	Parms.Subsystem = Subsystem;
 	Parms.LocalUserNum = LocalUserNum;
-	Parms.friend_0 = std::move(friend_0);
+	Parms.Friend = std::move(Friend);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

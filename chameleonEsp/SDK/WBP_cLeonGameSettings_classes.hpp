@@ -61,8 +61,8 @@ public:
 	TArray<class UWBP_MapContents_C*>             MapContents;                                       // 0x0608(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 
 public:
-	void SelectMapMain(class UWBP_MapContents_C* SelfWidget, const struct FST_cLeonMapData& Mapdata);
-	void SelectMap(class UWBP_MapContents_C* SelfWidget, const struct FST_cLeonMapData& Mapdata);
+	void SelectMapMain(class UWBP_MapContents_C* SelfWidget, const struct FST_cLeonMapData& MapData);
+	void SelectMap(class UWBP_MapContents_C* SelfWidget, const struct FST_cLeonMapData& MapData);
 	void ExecuteUbergraph_WBP_cLeonGameSettings(int32 EntryPoint);
 	void Construct();
 	void BndEvt__WBP_cLeonGameSettings_WBP_NavOptionBox_MapSelect_K2Node_ComponentBoundEvent_10_OnValueChangedEvent__DelegateSignature();

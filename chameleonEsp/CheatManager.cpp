@@ -32,7 +32,7 @@ void CheatManager::Init()
 
 	// get players
 	SDK::TArray<SDK::AActor*> Players;
-	UGStatics->GetAllActorsOfClass(gWorld, SDK::ABP_FirstPersonCharacter_Main_C::StaticClass(), &Players);
+	UGStatics->GetAllActorsOfClass(gWorld, SDK::ABP_FirstPersonCharacter_cLeon_Character_C::StaticClass(), &Players);
 
 	// class to math operations
 	MathLib = (SDK::UKismetMathLibrary*)SDK::UKismetMathLibrary::StaticClass();
@@ -44,7 +44,7 @@ void CheatManager::Init()
 
 		obj = Players[i];
 		if (!obj) continue;
-		BaseClass = (SDK::ABP_FirstPersonCharacter_Main_C*)obj;
+		BaseClass = (SDK::ABP_FirstPersonCharacter_cLeon_Character_C*)obj;
 		if (!BaseClass) continue;
 
 		auto Location = BaseClass->K2_GetActorLocation();
@@ -53,7 +53,7 @@ void CheatManager::Init()
 			PlayerController->FOV(cfg->bFovChanger ? cfg->fFovValue : 90); // fov changer
 
 		// if player is dead, skip
-		if (!BaseClass->PlayerState) continue;
+		if (!BaseClass->PlayerState || BaseClass->Dead) continue;
 
 		auto PlayerName = BaseClass->PlayerState->PlayerNamePrivate;
 		bool IsVisible = PlayerController->LineOfSightTo(obj, { 0,0,0 }, false); // visible check
@@ -71,53 +71,56 @@ void CheatManager::Init()
 		if (cfg->bEnemyOnly)
 		{
 			auto* MyChar = (SDK::ABP_FirstPersonCharacter_cLeon_Character_C*)MyPlayer;
-			auto* TargetChar = (SDK::ABP_FirstPersonCharacter_cLeon_Character_C*)BaseClass;
-			if (MyChar->IsHunter == TargetChar->IsHunter)
+			if (MyChar->IsHunter == BaseClass->IsHunter)
 				continue;
 		}
 
 		ImU32 colEsp  = ImGui::ColorConvertFloat4ToU32(IsVisible ? *(ImVec4*)cfg->colVisible : *(ImVec4*)cfg->colNotVisible);
 		ImU32 colLine = ImGui::ColorConvertFloat4ToU32(*(ImVec4*)cfg->colLines);
 
-		// draw bones
-		SDK::FVector2D BoneScreen, PrevBoneScreen;
-		for (const std::pair<int, int>& Connection : skeleton::Connections)
-		{
-			const auto Bone1 = Connection.first;
-			const auto Bone2 = Connection.second;
-			const auto BoneLoc1 = BaseClass->Mesh->GetSocketLocation(BaseClass->Mesh->GetBoneName(Bone1));
-			const auto BoneLoc2 = BaseClass->Mesh->GetSocketLocation(BaseClass->Mesh->GetBoneName(Bone2));
-			if (PlayerController->ProjectWorldLocationToScreen(BoneLoc1, &BoneScreen, false) && PlayerController->ProjectWorldLocationToScreen(BoneLoc2, &PrevBoneScreen, false))
-			{
-				if (cfg->bSkeleton)
-				{
-					ImGui::GetForegroundDrawList()->AddLine(ImVec2(BoneScreen.X, BoneScreen.Y), ImVec2(PrevBoneScreen.X, PrevBoneScreen.Y), colEsp, 1.0f);
-				}
-			}
-		}
-
-		//build a 2D bounding box from every bone's screen position so it stays correct in any pose (crouch, prone, etc.)
 		SDK::FVector2D BoxMin{}, BoxMax{};
 		bool bHasBox = false;
-		for (int BoneIdx = skeleton::amm; BoneIdx < skeleton::None; BoneIdx++)
+
+		if (BaseClass->Mesh)
 		{
-			const auto BoneLoc = BaseClass->Mesh->GetSocketLocation(BaseClass->Mesh->GetBoneName(BoneIdx));
-
-			SDK::FVector2D BoneScreenPos;
-			if (!PlayerController->ProjectWorldLocationToScreen(BoneLoc, &BoneScreenPos, false))
-				continue;
-
-			if (!bHasBox)
+			// draw bones
+			SDK::FVector2D BoneScreen, PrevBoneScreen;
+			for (const std::pair<int, int>& Connection : skeleton::Connections)
 			{
-				BoxMin = BoxMax = BoneScreenPos;
-				bHasBox = true;
-				continue;
+				const auto Bone1 = Connection.first;
+				const auto Bone2 = Connection.second;
+				const auto BoneLoc1 = BaseClass->Mesh->GetSocketLocation(BaseClass->Mesh->GetBoneName(Bone1));
+				const auto BoneLoc2 = BaseClass->Mesh->GetSocketLocation(BaseClass->Mesh->GetBoneName(Bone2));
+				if (PlayerController->ProjectWorldLocationToScreen(BoneLoc1, &BoneScreen, false) && PlayerController->ProjectWorldLocationToScreen(BoneLoc2, &PrevBoneScreen, false))
+				{
+					if (cfg->bSkeleton)
+					{
+						ImGui::GetForegroundDrawList()->AddLine(ImVec2(BoneScreen.X, BoneScreen.Y), ImVec2(PrevBoneScreen.X, PrevBoneScreen.Y), colEsp, 1.0f);
+					}
+				}
 			}
 
-			if (BoneScreenPos.X < BoxMin.X) BoxMin.X = BoneScreenPos.X;
-			if (BoneScreenPos.Y < BoxMin.Y) BoxMin.Y = BoneScreenPos.Y;
-			if (BoneScreenPos.X > BoxMax.X) BoxMax.X = BoneScreenPos.X;
-			if (BoneScreenPos.Y > BoxMax.Y) BoxMax.Y = BoneScreenPos.Y;
+			//build a 2D bounding box from every bone's screen position so it stays correct in any pose (crouch, prone, etc.)
+			for (int BoneIdx = skeleton::amm; BoneIdx < skeleton::None; BoneIdx++)
+			{
+				const auto BoneLoc = BaseClass->Mesh->GetSocketLocation(BaseClass->Mesh->GetBoneName(BoneIdx));
+
+				SDK::FVector2D BoneScreenPos;
+				if (!PlayerController->ProjectWorldLocationToScreen(BoneLoc, &BoneScreenPos, false))
+					continue;
+
+				if (!bHasBox)
+				{
+					BoxMin = BoxMax = BoneScreenPos;
+					bHasBox = true;
+					continue;
+				}
+
+				if (BoneScreenPos.X < BoxMin.X) BoxMin.X = BoneScreenPos.X;
+				if (BoneScreenPos.Y < BoxMin.Y) BoxMin.Y = BoneScreenPos.Y;
+				if (BoneScreenPos.X > BoxMax.X) BoxMax.X = BoneScreenPos.X;
+				if (BoneScreenPos.Y > BoxMax.Y) BoxMax.Y = BoneScreenPos.Y;
+			}
 		}
 
 		if (bHasBox)

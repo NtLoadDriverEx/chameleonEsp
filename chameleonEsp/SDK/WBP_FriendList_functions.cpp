@@ -50,6 +50,58 @@ void UWBP_FriendList_C::PushButton(const struct FUniqueNetIdRepl& ID)
 }
 
 
+// Function WBP_FriendList.WBP_FriendList_C.OnReadFriendsListComplete_FBCD2806418BE785B5E6FEA7A395A2A7
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   LocalUserNum                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bWasSuccessful                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    ListName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    ErrorStr                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void UWBP_FriendList_C::OnReadFriendsListComplete_FBCD2806418BE785B5E6FEA7A395A2A7(int32 LocalUserNum, bool bWasSuccessful, const class FString& ListName, const class FString& ErrorStr)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_FriendList_C", "OnReadFriendsListComplete_FBCD2806418BE785B5E6FEA7A395A2A7");
+
+	Params::WBP_FriendList_C_OnReadFriendsListComplete_FBCD2806418BE785B5E6FEA7A395A2A7 Parms{};
+
+	Parms.LocalUserNum = LocalUserNum;
+	Parms.bWasSuccessful = bWasSuccessful;
+	Parms.ListName = std::move(ListName);
+	Parms.ErrorStr = std::move(ErrorStr);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_FriendList.WBP_FriendList_C.OnCallFailed_FBCD2806418BE785B5E6FEA7A395A2A7
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   LocalUserNum                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bWasSuccessful                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    ListName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    ErrorStr                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void UWBP_FriendList_C::OnCallFailed_FBCD2806418BE785B5E6FEA7A395A2A7(int32 LocalUserNum, bool bWasSuccessful, const class FString& ListName, const class FString& ErrorStr)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_FriendList_C", "OnCallFailed_FBCD2806418BE785B5E6FEA7A395A2A7");
+
+	Params::WBP_FriendList_C_OnCallFailed_FBCD2806418BE785B5E6FEA7A395A2A7 Parms{};
+
+	Parms.LocalUserNum = LocalUserNum;
+	Parms.bWasSuccessful = bWasSuccessful;
+	Parms.ListName = std::move(ListName);
+	Parms.ErrorStr = std::move(ErrorStr);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function WBP_FriendList.WBP_FriendList_C.ExecuteUbergraph_WBP_FriendList
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:

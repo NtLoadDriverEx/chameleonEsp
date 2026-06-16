@@ -12163,23 +12163,23 @@ public:
 };
 DUMPER7_ASSERTS_LevelInstanceInterface_IsLoaded;
 
-// Function Engine.spotlight.SetInnerConeAngle
+// Function Engine.SpotLight.SetInnerConeAngle
 // 0x0004 (0x0004 - 0x0000)
-struct spotlight_SetInnerConeAngle final
+struct SpotLight_SetInnerConeAngle final
 {
 public:
 	float                                         NewInnerConeAngle;                                 // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_spotlight_SetInnerConeAngle;
+DUMPER7_ASSERTS_SpotLight_SetInnerConeAngle;
 
-// Function Engine.spotlight.SetOuterConeAngle
+// Function Engine.SpotLight.SetOuterConeAngle
 // 0x0004 (0x0004 - 0x0000)
-struct spotlight_SetOuterConeAngle final
+struct SpotLight_SetOuterConeAngle final
 {
 public:
 	float                                         NewOuterConeAngle;                                 // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_spotlight_SetOuterConeAngle;
+DUMPER7_ASSERTS_SpotLight_SetOuterConeAngle;
 
 // Function Engine.AnimNotifyMirrorInspectionLibrary.GetMirrorDataTable
 // 0x0038 (0x0038 - 0x0000)
@@ -13199,7 +13199,7 @@ struct AnimationDataController_Resize final
 public:
 	float                                         Length;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         T0;                                                // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         t1;                                                // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         T1;                                                // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bShouldTransact;                                   // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
@@ -13212,7 +13212,7 @@ struct AnimationDataController_ResizeInFrames final
 public:
 	struct FFrameNumber                           NewLengthInFrames;                                 // 0x0000(0x0004)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FFrameNumber                           T0;                                                // 0x0004(0x0004)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FFrameNumber                           t1;                                                // 0x0008(0x0004)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FFrameNumber                           T1;                                                // 0x0008(0x0004)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bShouldTransact;                                   // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
@@ -13225,7 +13225,7 @@ struct AnimationDataController_ResizeNumberOfFrames final
 public:
 	struct FFrameNumber                           NewLengthInFrames;                                 // 0x0000(0x0004)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FFrameNumber                           T0;                                                // 0x0004(0x0004)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FFrameNumber                           t1;                                                // 0x0008(0x0004)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FFrameNumber                           T1;                                                // 0x0008(0x0004)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bShouldTransact;                                   // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
@@ -13238,7 +13238,7 @@ struct AnimationDataController_ResizePlayLength final
 public:
 	float                                         NewLength;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         T0;                                                // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         t1;                                                // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         T1;                                                // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bShouldTransact;                                   // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
