@@ -5,10 +5,16 @@ void Menu::Init()
 	ImGui::SetNextWindowSize({ 300, 380 }, ImGuiCond_Once);
 	ImGui::Begin("phxgg esp", nullptr, 0);
 
+	const float footerH = ImGui::GetStyle().ItemSpacing.y + ImGui::GetFrameHeightWithSpacing() + ImGui::GetStyle().WindowPadding.y;
+
+	ImGui::BeginChild("##content", ImVec2(0, -footerH), false, ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse);
+
 	if (ImGui::BeginTabBar("##tabs"))
 	{
 		if (ImGui::BeginTabItem("ESP"))
 		{
+			ImGui::BeginChild("##esp_list", ImVec2(0, 0), false);
+
 			ImGui::Checkbox("Fov Changer", &cfg->bFovChanger);
 			if (cfg->bFovChanger)
 				ImGui::SliderFloat("Fov Value", &cfg->fFovValue, 50.0f, 180.0f);
@@ -49,11 +55,14 @@ void Menu::Init()
 				ImGui::EndPopup();
 			}
 
+			ImGui::EndChild();
 			ImGui::EndTabItem();
 		}
 
 		if (ImGui::BeginTabItem("Teleport"))
 		{
+			ImGui::BeginChild("##tp_list", ImVec2(0, 0), false);
+
 			if (cheat->PlayerInfos.empty())
 			{
 				ImGui::TextDisabled("No players found");
@@ -71,28 +80,36 @@ void Menu::Init()
 				}
 			}
 
+			ImGui::EndChild();
 			ImGui::EndTabItem();
 		}
 
 		if (ImGui::BeginTabItem("Tools"))
 		{
+			ImGui::BeginChild("##tools_list", ImVec2(0, 0), false);
+
 			if (ImGui::Button("Dump Bones"))
 				cfg->bDumpBones = true;
+
+			ImGui::EndChild();
 			ImGui::EndTabItem();
 		}
 
 		if (ImGui::BeginTabItem("About"))
 		{
+			ImGui::BeginChild("##about_list", ImVec2(0, 0), false);
+
 			ImGui::Text("phxgg esp");
+
+			ImGui::EndChild();
 			ImGui::EndTabItem();
 		}
 
 		ImGui::EndTabBar();
 	}
 
-	// Footer: Save / Load on left, Enable on the right
-	const float footerHeight = ImGui::GetFrameHeightWithSpacing() + ImGui::GetStyle().WindowPadding.y;
-	ImGui::SetCursorPosY(ImGui::GetWindowHeight() - footerHeight);
+	ImGui::EndChild();
+
 	ImGui::Separator();
 
 	float buttonW = 55.0f;
