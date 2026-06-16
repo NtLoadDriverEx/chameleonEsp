@@ -20,6 +20,7 @@ void Menu::Init()
 				ImGui::SliderFloat("Fov Value", &cfg->fFovValue, 50.0f, 180.0f);
 
 			ImGui::Checkbox("Enemy Only", &cfg->bEnemyOnly);
+			ImGui::Checkbox("Character Visibility (Infection Mode)", &cfg->bForceCharacterVisibility);
 			ImGui::Checkbox("Box", &cfg->bBox);
 			ImGui::Checkbox("Lines", &cfg->bLines);
 			ImGui::Checkbox("Name", &cfg->bNames);

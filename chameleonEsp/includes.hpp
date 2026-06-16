@@ -32,3 +32,4 @@ inline Menu* gui;
 inline Settings* cfg;
 inline FILE* file;
 inline Drawings* draw;
+inline SDK::UFunction* g_OnRepBodyVisibilityFunc = nullptr;

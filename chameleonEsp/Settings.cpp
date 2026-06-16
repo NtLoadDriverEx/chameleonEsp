@@ -14,6 +14,7 @@ void Settings::InitializeSettings()
 	this->bSkeleton = false;
 	this->bDumpBones = false;
 	this->bEnemyOnly = false;
+	this->bForceCharacterVisibility = false;
 	this->iTeleportTarget = -1;
 	float colVisible[4]    = { 0.0f,  1.0f,  0.0f, 1.0f };
 	float colNotVisible[4] = { 0.706f, 0.392f, 1.0f, 1.0f };

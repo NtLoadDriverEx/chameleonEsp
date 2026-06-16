@@ -11,6 +11,7 @@ public:
 	bool bSkeleton;
 	bool bDumpBones;
 	bool bEnemyOnly;
+	bool bForceCharacterVisibility;
 	int iTeleportTarget;
 	float colVisible[4];
 	float colNotVisible[4];

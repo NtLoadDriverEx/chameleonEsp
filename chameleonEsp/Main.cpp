@@ -15,6 +15,9 @@ ExecuteCommandLists oExecuteCommandLists = NULL;
 typedef HRESULT(APIENTRY* ResizeBuffers)(IDXGISwapChain3* pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags);
 ResizeBuffers oResizeBuffers = NULL;
 
+typedef void(__fastcall* tProcessEvent)(SDK::UObject*, SDK::UFunction*, void*);
+tProcessEvent oProcessEvent = nullptr;
+
 namespace Process {
     DWORD ID;
     HANDLE Handle;
@@ -65,6 +68,16 @@ LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
     }
 
     return CallWindowProc(Process::WndProc, hWnd, uMsg, wParam, lParam);
+}
+
+void __fastcall hkProcessEvent(SDK::UObject* pObject, SDK::UFunction* pFunction, void* pParms)
+{
+    if (cfg && cfg->bForceCharacterVisibility && g_OnRepBodyVisibilityFunc && pFunction == g_OnRepBodyVisibilityFunc)
+    {
+        // Force BodyVisibility = true before OnRep reads it, so the character appears visible
+        static_cast<SDK::ABP_FirstPersonCharacter_cLeon_Character_C*>(pObject)->BodyVisibility = true;
+    }
+    return oProcessEvent(pObject, pFunction, pParms);
 }
 
 bool init = false;
@@ -360,6 +373,11 @@ DWORD MainThread(HMODULE Module)
 
     if (MH_CreateHook(tResizeBuffers, hkResizeBuffers, (LPVOID*)&oResizeBuffers) != MH_OK) {
         std::cout << "Failed to hook ResizeBuffers!" << std::endl;
+    }
+
+    void* tProcessEvent = reinterpret_cast<void*>(SDK::InSDKUtils::GetImageBase() + SDK::Offsets::ProcessEvent);
+    if (MH_CreateHook(tProcessEvent, hkProcessEvent, (LPVOID*)&oProcessEvent) != MH_OK) {
+        std::cout << "Failed to hook ProcessEvent!" << std::endl;
     }
 
     MH_EnableHook(MH_ALL_HOOKS);
