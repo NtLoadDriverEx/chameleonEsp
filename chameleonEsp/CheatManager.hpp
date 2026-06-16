@@ -17,7 +17,7 @@ private:
 	int x, y = 0;
 public:
 	struct PlayerInfo {
-		std::string Name;
+		std::wstring Name;
 		SDK::FVector Location;
 	};
 	std::vector<PlayerInfo> PlayerInfos;

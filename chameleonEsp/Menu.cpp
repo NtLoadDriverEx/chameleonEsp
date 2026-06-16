@@ -1,5 +1,17 @@
 #include "includes.hpp"
 
+std::string WStringToString(const std::wstring& wstr) {
+	if (wstr.empty()) return "";
+
+	// Determine the length of the resulting UTF-8 string
+	int size_needed = WideCharToMultiByte(CP_UTF8, 0, &wstr[0], (int)wstr.size(), NULL, 0, NULL, NULL);
+	std::string strTo(size_needed, 0);
+
+	// Perform the conversion
+	WideCharToMultiByte(CP_UTF8, 0, &wstr[0], (int)wstr.size(), &strTo[0], size_needed, NULL, NULL);
+	return strTo;
+}
+
 void Menu::Init()
 {
 	ImGui::SetNextWindowSize({ 300, 380 }, ImGuiCond_Once);
@@ -76,7 +88,8 @@ void Menu::Init()
 					if (ImGui::Button("TP"))
 						cfg->iTeleportTarget = i;
 					ImGui::SameLine();
-					ImGui::Text("%s", cheat->PlayerInfos[i].Name.c_str());
+					std::string playerName = WStringToString(cheat->PlayerInfos[i].Name);
+					ImGui::Text("%s", playerName.c_str());
 					ImGui::PopID();
 				}
 			}

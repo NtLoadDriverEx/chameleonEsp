@@ -59,7 +59,7 @@ void CheatManager::Init()
 		bool IsVisible = PlayerController->LineOfSightTo(obj, { 0,0,0 }, false); // visible check
 
 		if (obj != MyPlayer)
-			PlayerInfos.push_back({ PlayerName.IsValid() ? PlayerName.ToString() : "Unknown", Location });
+			PlayerInfos.push_back({ PlayerName.IsValid() ? PlayerName.CStr() : L"Unknown", Location });
 		else
 			continue;
 
